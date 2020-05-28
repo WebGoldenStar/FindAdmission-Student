@@ -1,0 +1,54 @@
+<div class="visa-container">
+    <div class="visa-header d-flex">
+        <span class="ti-arrow-left" ng-click="setStep('step2')"></span>
+        <h3 class="ml-3">Funding & Finances </h3>
+    </div>
+    <div class="visa-body">
+
+        <div class="mb-3">
+            <h2>What are your current personal circumstances?</h2>
+
+            <form action="#" class="ml-1 mb-2 mt-3 custom-radio">
+
+                <label class="mr-5">
+                    <input type="radio" class="option-input checkbox" name="personalCircumstance" value="Employed full time" ng-model="personalCircumstance" />
+                    Employed full time
+                  </label>
+                <label class="mr-5">
+                    <input type="radio" class="option-input checkbox" name="personalCircumstance" value="Self-Employed" ng-model="personalCircumstance"/>
+                    Self-Employed
+                  </label>
+                <label class="mr-5">
+                    <input type="radio" class="option-input checkbox" name="personalCircumstance" value="Student" ng-model="personalCircumstance"/>
+                    Student
+                  </label>
+
+            </form>
+
+            <form action="#" class="ml-1 mb-2 mt-3 custom-radio">
+
+                <label class="mr-5">
+                    <input type="radio" class="option-input checkbox" name="personalCircumstance" value="Employed part time" ng-model="personalCircumstance" />
+                    Employed part time
+                  </label>
+                <label class="mr-5">
+                    <input type="radio" class="option-input checkbox" name="personalCircumstance" value="Unemployed" ng-model="personalCircumstance"/>
+                    Unemployed
+                  </label>
+                <label class="mr-5">
+                    <input type="radio" class="option-input checkbox" name="personalCircumstance" value="Other" ng-model="personalCircumstance"/>
+                    Other
+                  </label>
+            </form>
+            <textarea class="form-control" aria-label="With textarea" rows="1" ng-model="circumstanceDetail" ng-show="personalCircumstance==='Other'" placeholder="Please give details"></textarea>
+
+        </div>
+
+        <br>
+        <div class="d-flex justify-content-between">
+            <button type="button" class="btn btn-secondary btn-lg" ng-click="setStep('step4')">I don't have</button>
+            <button type="button" class="btn btn-success btn-lg" ng-click="proposedStudyTab(personalCircumstance, circumstanceDetail)">Next</button>
+        </div>
+    </div>
+
+</div>

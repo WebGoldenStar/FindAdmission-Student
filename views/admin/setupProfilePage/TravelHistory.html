@@ -1,0 +1,58 @@
+<div class="visa-container">
+    <div class="visa-header d-flex">
+        <span class="ti-arrow-left" ng-click="setStep('step1')"></span>
+        <h3 class="ml-3">Travel History</h3>
+    </div>
+    <div class="visa-body">
+        <div class="mb-3">
+            <h2>Have you ever travel outside your country of residence</h2>
+            <form action="#" class="ml-1 mb-2 mt-3 custom-radio">
+                <label class="mr-3">
+                    <input type="radio" class="option-input checkbox" name="isTravelledCountry" value="YES"  ng-model="isTravelledCountry"/>
+                    YES
+                  </label>
+                <label class="mr-3">
+                    <input type="radio" class="option-input checkbox" name="isTravelledCountry" value="NO" ng-model="isTravelledCountry"/>
+                    NO
+                  </label>
+            </form>
+            <textarea class="form-control" aria-label="With textarea" rows="1" ng-model="travelledCountryDetail" placeholder="If yes, please provide full details of data and countries" ng-show="isTravelledCountry==='YES'"></textarea>
+
+        </div>
+        <div class="mb-3">
+            <h2>Have you ever been refused a visa for any country?</h2>
+            <form action="#" class="ml-1 mb-2 mt-3 custom-radio">
+                <label class="mr-3">
+                    <input type="radio" class="option-input checkbox" name="isRefusedCountry" value="YES"  ng-model="isRefusedCountry"/>
+                    YES
+                  </label>
+                <label class="mr-3">
+                    <input type="radio" class="option-input checkbox" name="isRefusedCountry" value="NO" ng-model="isRefusedCountry"/>
+                    NO
+                  </label>
+            </form>
+            <textarea class="form-control" aria-label="With textarea" rows="1" ng-model="refusedCountryDetail" placeholder="If yes, please provide full details of Date, country and Reasons for refusal" ng-show="isRefusedCountry==='YES'"></textarea>
+        </div>
+        <div>
+            <h2>Have you ever been deported or removed from any country</h2>
+            <form action="#" class="ml-1 mb-2 mt-3 custom-radio">
+                <label class="mr-3">
+                    <input type="radio" class="option-input checkbox" name="isDeportedCountry" value="YES"  ng-model="isDeportedCountry"/>
+                    YES
+                  </label>
+                <label class="mr-3">
+                    <input type="radio" class="option-input checkbox" name="isDeportedCountry" value="NO" ng-model="isDeportedCountry"/>
+                    NO
+                  </label>
+
+            </form>
+            <textarea class="form-control" aria-label="With textarea" rows="1" ng-model="deportedCountryDetail" placeholder="If yes, please provide full details of Date, country and Reasons for refusal" ng-show="isDeportedCountry==='YES'"></textarea>
+        </div>
+        <br>
+        <div class="d-flex justify-content-between">
+            <button type="button" class="btn btn-secondary btn-lg" ng-click="setStep('step3')">I don't have</button>
+            <button type="button" class="btn btn-success btn-lg" ng-click="fundingTab(isTravelledCountry, travelledCountryDetail, isRefusedCountry, refusedCountryDetail, isDeportedCountry, deportedCountryDetail)">Next</button>
+        </div>
+    </div>
+
+</div>

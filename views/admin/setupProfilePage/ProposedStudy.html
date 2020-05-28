@@ -1,0 +1,84 @@
+<div class="visa-container">
+    <div class="visa-header d-flex">
+        <span class="ti-arrow-left" ng-click="setStep('step2')"></span>
+        <h3 class="ml-3">Proposed Study </h3>
+    </div>
+    <div class="visa-body">
+        <div class="mb-3">
+            <h2>Have you already received an admission offer?</h2>
+            <form action="#" class="ml-1 mb-2 mt-3 custom-radio">
+                <label class="mr-3">
+                    <input type="radio" class="option-input checkbox" name="isReceivedAdmission" value="YES"  ng-model="isReceivedAdmission"/>
+                    YES
+                  </label>
+                <label class="mr-3">
+                    <input type="radio" class="option-input checkbox" name="isReceivedAdmission" value="NO" ng-model="isReceivedAdmission"/>
+                    NO
+                  </label>
+            </form>
+            <textarea class="form-control" aria-label="With textarea" rows="1" ng-model="receivedAdmissionDetail" placeholder="If yes, what is the name of the institution?" ng-show="isReceivedAdmission==='YES'"></textarea>
+
+        </div>
+        <div class="mb-3">
+            <h2>Which course are you looking to study?</h2>
+            <textarea class="form-control" aria-label="With textarea" rows="1" ng-model="studyCourse" placeholder="If yes, what is the name of the institution?"></textarea>
+        </div>
+        <div class="mb-3">
+            <h2>Who is sponsoring your education</h2>
+
+            <form action="#" class="ml-1 mb-2 mt-3 custom-radio">
+
+                <label class="mr-5">
+                    <input type="radio" class="option-input checkbox" name="sponsoringEducation" value="My Parent" ng-model="sponsoringEducation" />
+                    My Parent
+                  </label>
+                <label class="mr-5">
+                    <input type="radio" class="option-input checkbox" name="sponsoringEducation" value="Plan to take loan" ng-model="sponsoringEducation"/>
+                    Plan to take loan
+                  </label>
+                <label class="mr-5">
+                    <input type="radio" class="option-input checkbox" name="sponsoringEducation" value="Government Sponorship" ng-model="sponsoringEducation"/>
+                    Government Sponorship
+                  </label>
+
+
+
+                <label class="mr-5">
+                    <input type="radio" class="option-input checkbox" name="sponsoringEducation" value="Employed part time" ng-model="sponsoringEducation" />
+                    Employed part time
+                  </label>
+                <label class="mr-5">
+                    <input type="radio" class="option-input checkbox" name="sponsoringEducation" value="Unemployed" ng-model="sponsoringEducation"/>
+                    Unemployed
+                  </label>
+                <label class="mr-5">
+                    <input type="radio" class="option-input checkbox" name="sponsoringEducation" value="Other" ng-model="sponsoringEducation"/>
+                    Other
+                  </label>
+            </form>
+            <textarea class="form-control" aria-label="With textarea" rows="1" ng-model="educationDetail" placeholder="Please give details" ng-show="sponsoringEducation==='Other'"></textarea>
+
+        </div>
+        <div class="mb-3">
+            <h2>Are you aware of other cost excluding tuition?</h2>
+            <form action="#" class="ml-1 mb-2 mt-3 custom-radio">
+                <label class="mr-3">
+                    <input type="radio" class="option-input checkbox" name="isExcludingTuition" value="YES"  ng-model="isExcludingTuition"/>
+                    YES
+                  </label>
+                <label class="mr-3">
+                    <input type="radio" class="option-input checkbox" name="isExcludingTuition" value="NO" ng-model="isExcludingTuition"/>
+                    NO
+                  </label>
+            </form>
+            <textarea class="form-control" aria-label="With textarea" rows="1" ng-model="excludingTuitionDetail" placeholder="If yes, what is the name of the institution?" ng-show="isExcludingTuition==='YES'"></textarea>
+
+        </div>
+        <br>
+        <div class="d-flex justify-content-between">
+            <button type="button" class="btn btn-secondary btn-lg" ng-click="setStep('step5')">I don't have</button>
+            <button type="button" class="btn btn-success btn-lg" ng-click="locationTab(isReceivedAdmission, receivedAdmissionDetail, studyCourse, sponsoringEducation, educationDetail, isExcludingTuition, excludingTuitionDetail)">Next</button>
+        </div>
+    </div>
+
+</div>

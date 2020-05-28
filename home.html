@@ -1,0 +1,28 @@
+<!-- <div id="preloader">
+    <div class="loader"></div>
+</div> -->
+<!-- preloader area end -->
+<!-- login area start -->
+<div class="login-area login-s2">
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+        <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarTogglerDemo01">
+            <img src="assets/images/icon/logo3.png" width="200">
+
+            <ul class="navbar-nav" ng-controller="navController">
+                <li class="nav-item">
+                    <a class="nav-link" ng-class="{active: isActive('/home/login')}" href="#!home/login">Login <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" ng-class="{active: isActive('/home/register')}" href="#!home/register">Register</a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div app-view-segment="1"></div>
+    </div>
+    <script src="assets/js/scripts.js"></script>

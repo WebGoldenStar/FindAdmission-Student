@@ -1,0 +1,65 @@
+<div class="visa-container">
+    <div class="visa-header d-flex">
+        <span class="ti-arrow-left" ng-click="setStep('step5')"></span>
+        <h3 class="ml-3">Profile Photo</h3>
+    </div>
+    <div class="visa-body">
+        <p class="mb-3">Please upload a professional portrait that clearly shows your face</p>
+        <br>
+        <div class="profile">
+            <div class="profile-left">
+                <img src="{{profileImage}}" width="100px" height="100px" alt="Avatar" class="profile-img" id="profile-image" style="height: 100px;">
+                <br>
+                <button type="button" class="btn btn-outline-success mb-3" data-toggle="modal" data-target="#exampleModalCenter">Add Profile Photo</button>
+                <div class="modal fade" id="exampleModalCenter">
+                    <div class="modal-dialog modal-dialog-centered edit-profile" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Edit profile photo</h5>
+                                <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="d-flex justify-content-center" style="background-color: lightgray;">
+                                    <div class="cropArea">
+                                        <img-crop image="previewImage" result-image="resultImage" area-init-size="{ w:cropper.cropWidth,h:cropper.cropHeight}" cropject="cropper"></img-crop>
+                                    </div>
+                                    <!-- <img src="assets/images/author/img_avatar.png" width="300px" alt="Avatar" class="edit-profile-img" id="image-preview"> -->
+                                </div>
+                                <div class="p-4">
+                                    <!-- <button type="file" class="btn btn-outline-success mb-3">Select Different Image</button> -->
+                                    <label class="btn btn-block btn-outline-success">
+                                        Select Different Image&hellip; <input type="file" id="fileInput" style="display: none;" custom-on-change="onFileChange">
+                                    </label>
+                                    <br>
+                                    <p>Profile photo guidelines:</p>
+                                    <br>
+                                    <span><li>Professional-looking</li></span>
+                                    <span><li>Crisp resolution</li></span>
+                                    <span><li>Include only your face</li></span>
+                                    <span><li>Have a neutral background</li></span>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary" ng-click="imageSave(resultImage)">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="skip_step" ng-click="setStep('step7')" style="cursor: pointer;">Skip this step for now</a>
+            </div>
+            <div class="profile-right">
+                <p>Profile Photo guidelines:</p>
+                <span><li>Professional-looking</li></span>
+                <span><li>Crisp resolution</li></span>
+                <span><li>Include only your face</li></span>
+                <span><li>Have a neutral background</li></span>
+            </div>
+        </div>
+        <br>
+        <div class="d-flex justify-content-between">
+            <button type="button" class="btn btn-secondary btn-lg" ng-click="setStep('step5')">Back</button>
+            <button type="button" class="btn btn-success btn-lg" ng-click="complete()">Complete</button>
+        </div>
+    </div>
+</div>

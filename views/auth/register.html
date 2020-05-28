@@ -1,0 +1,114 @@
+<div class="login-box" ng-controller="registerController">
+    <form ng-submit="signup();">
+        <div class="login-form-head">
+            <h2 class="mb-2">Looking for a visa expert?</h2>
+            <h5>Create an account for FREE</h5>
+        </div>
+        <div class="login-form-body">
+            <div class="form-group d-flex">
+                <div class="mr-2 w-100">
+                    <label for="exampleInputName1">First Name</label>
+                    <input type="text" class="form-control" ng-model="firstname" id="firstname" placeholder="First Name" />
+                    <div class="text-danger"></div>
+                </div>
+                <div class="w-100">
+                    <label for="exampleInputName1">Last Name</label>
+                    <input type="text" class="form-control" ng-model="lastname" id="lastname" placeholder="Last Name" />
+                    <div class="text-danger"></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div>
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" ng-model="loginemail" id="loginemail" placeholder="Enter email" />
+                    <div class="text-danger"></div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div>
+                    <label for="exampleInputEmail1">Company Name</label>
+                    <input type="text" class="form-control" ng-model="vcompanyname" id="vcompanyname" placeholder="Company Name" />
+                    <div class="text-danger"></div>
+                </div>
+            </div>
+            <div class="form-group d-flex">
+                <div class="w-100 mr-2">
+                    <label>Country</label>
+                    <select class="custom-select" ng-model="countryid" ng-change="changedcountry()" ng-options="monthlistb.country_id as (monthlistb.country_name) for monthlistb in countrylist">
+                        <option value="">Select Country</option>
+                    </select>
+                </div>
+                <div class="w-100">
+                    <label>Gender</label>
+                    <select name="gender" ng-model="gender" id="gender" class="custom-select" autocomplete="off">
+                        <option value="">Select Gender</option>
+                        <option value="m">Male</option>
+                        <option value="f">Female</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Phone Number</label>
+                <div class="d-flex">
+                    <div class="w-25 mr-2">
+                        <select class="custom-select" ng-model="dialingcode" ng-options="monthlistb.country_dialingcode as (monthlistb.dlkey) for monthlistb in countrylist">
+                        <option value="">Select</option>
+                    </select>
+                    </div>
+                    <div class="w-75">
+                        <input type="number" name="phone" placeholder="Phone Number" ng-model="phonenum" class="form-control" id="phone" />
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Whatsapp Number <label ng-click="cpywap();" style="color: white;background-color: #34bfa4;padding:5px;border-radius: 5px;">copy from above</label></label>
+                <div class="d-flex">
+                    <div class="w-25 mr-2">
+                        <select class="custom-select" ng-model="wadialingcode" ng-options="monthlistb.country_dialingcode as (monthlistb.dlkey) for monthlistb in countrylist">
+                        <option value="">Select</option>
+                    </select>
+                    </div>
+                    <div class="w-75">
+                        <input type="number" name="waphone" placeholder="WA Phone Number" ng-model="waphone" class="form-control" id="waphone" />
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="example-date-input" class="col-form-label">Date of Birth</label>
+                <input class="form-control" type="date" value="2018-07-19T15:30:00" id="birthday" ng-model="birthday">
+            </div>
+            <div class="form-group d-flex">
+                <div class="mr-2 w-100">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" ng-model="signuppass" class="form-control" id="password" placeholder="Password" />
+                    <div class="text-danger"></div>
+                </div>
+                <div class="w-100">
+                    <label for="exampleInputPassword2">Confirm Password</label>
+                    <input type="password" ng-model="signupvpass" class="form-control" id="confrimPassword" placeholder="Confirm Password" />
+                    <div class="text-danger"></div>
+                </div>
+            </div>
+            <div>
+                <div class="alert alert-danger" ng-show="showsignuperr">{{showsignuperrmsg}}</div>
+                <!-- <div class="alert alert-primary" ng-show="showsuccess">{{showsuccessmsg}}</div> -->
+            </div>
+            <p class="toswarning text-center mb-4 mt-4">
+                By clicking "Sign Up", you are indicating you agree to our
+                <label style="color: #006191; font-weight: bold;">Terms of Service</label> and
+                <label style="color: #006191; font-weight: bold;">Privacy Policy</label> and also agree to receiving news and tips via email or push notification.
+            </p>
+            <div class="submit-btn-area">
+                <button id="form_submit" type="submit">
+                    SIGN UP FREE <i class="ti-arrow-right"></i>
+                </button>
+            </div>
+            <div class="form-footer text-center mt-5">
+                <p class="text-muted">
+                    Don't have an account? <a href="#!home/login">Sign in</a>
+                </p>
+            </div>
+        </div>
+    </form>
+</div>

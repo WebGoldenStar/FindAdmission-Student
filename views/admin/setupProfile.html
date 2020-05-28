@@ -1,0 +1,38 @@
+<div class="visacounsellor-content-inner d-flex">
+    <div class="visa-menu">
+        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <a class="nav-link" ng-class="{active:isActive('step1')}" id="visa-type" aria-selected="true">Visa Type</a>
+            <a class="nav-link" ng-class="{active:isActive('step2')}" id="travel-history" aria-selected="false">Travel History</a>
+            <a class="nav-link" ng-class="{active:isActive('step3')}" id="funding-finances" aria-selected="false">Funding & Finances</a>
+            <a class="nav-link" ng-class="{active:isActive('step4')}" id="proposed-study" aria-selected="false">Proposed Study</a>
+            <a class="nav-link" ng-class="{active:isActive('step5')}" id="location" aria-selected="false">Your Location</a>
+            <a class="nav-link" ng-class="{active:isActive('step6')}" id="profile-photo" aria-selected="false">Profile Photo</a>
+        </div>
+    </div>
+    <div class="visa-content-right">
+        <div class="meter">
+            <span style="width: 0%" id="progressStatus"></span>
+        </div>
+        <div class="tab-content" id="v-pills-tabContent">
+            <div class="tab-pane fade" ng-class="{active:isActive('step1'),show:isActive('step1')}" id="visa-typ-tab" role="tabpanel">
+                <div ng-include="'views/admin/setupProfilePage/VisaType.html'"></div>
+            </div>
+            <div class="tab-pane fade" ng-class="{active:isActive('step2'),show:isActive('step2')}" id="travel-history-tab" role="tabpanel">
+                <div ng-include="'views/admin/setupProfilePage/TravelHistory.html'"></div>
+            </div>
+            <div class="tab-pane fade" ng-class="{active:isActive('step3'),show:isActive('step3')}" id="training-tab" role="tabpanel">
+                <div ng-include="'views/admin/setupProfilePage/Funding.html'"></div>
+            </div>
+            <div class="tab-pane fade" ng-class="{active:isActive('step4'),show:isActive('step4')}" id="training-tab" role="tabpanel">
+                <div ng-include="'views/admin/setupProfilePage/ProposedStudy.html'"></div>
+            </div>
+            <div class="tab-pane fade" ng-class="{active:isActive('step5'),show:isActive('step5')}" id="training-tab" role="tabpanel">
+                <div ng-include="'views/admin/setupProfilePage/Location.html'"></div>
+            </div>
+            <div class="tab-pane fade" ng-class="{active:isActive('step6'),show:isActive('step6')}" id="training-tab" role="tabpanel">
+                <div ng-include="'views/admin/setupProfilePage/profilePhoto.html'"></div>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="visa-container">
+    <div class="visa-header d-flex">
+        <span class="ti-arrow-left" ng-click="setStep('step4')"></span>
+        <h3 class="ml-3">Your Location</h3>
+    </div>
+    <div class="visa-body">
+        <h2>Enter your full address</h2>
+        <textarea class="form-control" placeholder="Provide address details" rows="1" ng-model="address"></textarea>
+        <div class="d-flex justify-content-between mt-4">
+            <select class="form-control mr-4" ng-model="state">
+                <option>Select state or region</option>
+                <option>California</option>
+                <option>Florida</option>
+                <option>New York</option>
+            </select>
+            <input class="btn btn-rounded btn-warning mb-3" type="button" value="Use Google Maps">
+        </div>
+        <br>
+        <div class="d-flex justify-content-between">
+            <button type="button" class="btn btn-secondary btn-lg" ng-click="setStep('step4')">Back</button>
+            <button type="button" class="btn btn-success btn-lg" ng-click="profilePhotoTab(address, state)">Next</button>
+        </div>
+    </div>
+
+</div>

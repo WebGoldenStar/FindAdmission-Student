@@ -1,0 +1,64 @@
+<div class="visa-container">
+    <div class="visa-header d-flex">
+        <h3>Visa Type</h3>
+    </div>
+    <div class="visa-body">
+        <h2>Which country are you looking to study?</h2>
+        <div class="expertise-country-content">
+            <div class="d-flex expertise-country-list">
+                <div class="dropdown">
+                    <button class="btn btn-flat btn-success dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                    European Countries
+                </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" x-placement="bottom-start">
+                        <a class="dropdown-item" ng-repeat="country in europeanCountries" ng-click="addStudyCountry(country)">{{country}}</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-flat btn-success dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                    Asian Countires
+                </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" x-placement="bottom-start">
+                        <a class="dropdown-item" ng-repeat="country in asiaCountries" ng-click="addStudyCountry(country)">{{country}}</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-flat btn-success dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                    American Countries
+                </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" x-placement="bottom-start">
+                        <a class="dropdown-item" ng-repeat="country in americaCountries" ng-click="addStudyCountry(country)">{{country}}</a>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="expertise-countries">
+                <div ng-repeat="country in studyCountries track by $index" class="grid-col d-flex justify-content-between expertise-country-item">
+                    <h4>{{country}}</h4>
+                    <button type="button" ng-click="removeStudyCountry(country)" class="close" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+            </div>
+        </div>
+        <br>
+        <h2>What type of Study Visa are you applying for?</h2>
+        <br>
+        <div class="country-experience">
+            <a class="list-group-item list-group-item-action flex-column align-items-start text-center " ng-click="visaType = 'Type1'" ng-class="(visaType==='Type1')?'active':''">
+                <h5 class="mb-1">Study Visa</h5>
+                <p class="mb-1">Undergraduate Program / Degree program</p>
+            </a>
+            <a class="list-group-item list-group-item-action flex-column align-items-start text-center " ng-click="visaType = 'Type2'" ng-class="(visaType==='Type2')?'active':''">
+                <h5 class="mb-1">Study Visa</h5>
+                <p class="mb-1">Postgraduate Program / PHD</p>
+            </a>
+            <a class="list-group-item list-group-item-action flex-column align-items-start text-center " ng-click="visaType = 'Type3'" ng-class="(visaType==='Type3')?'active':''">
+                <h5 class="mb-1">Student Visitor</h5>
+                <p class="mb-1">Study Abroad, Short courses</p>
+            </a>
+        </div>
+        <br>
+        <div class="d-flex justify-content-end"><button type="button" class="btn btn-success btn-lg mb-3" ng-click="travelHistoryTab(visaType)">Next</button></div>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+<div class="main-content-inner">
+    <div style="background-color:white;padding:15px 0px">
+        <div class="dashboard-welcome media" style="padding: 0px;">
+            <img class="avatar user-thumb" src="assets/images/author/img_avatar.png" width="200px" alt="avatar">
+            <div class="media-body">
+                <h6>Good Morning, {{user.fname + " " + user.lname}}</h6>
+                <h5>{{user.fname + " " + user.lname}}</h5>
+            </div>
+        </div>
+    </div>
+    <div class="dashboard">
+        <div class="dashboard-item-grid">
+            <!-- Modal -->
+            <div class="modal fade show introduction-modal" ng-show="introduction" id="introduction">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Fill out your profile to invite visa counsellor</h5>
+                        </div>
+                        <div class="modal-body">
+                            <h4>To ensure you get the right visa counsellor, you need to provide some basic information</h4>
+                            <br>
+                            <div class="introduction-modal-body-content">
+                                <h6>Here's how it works</h6>
+                                <p class="card-text">1. Complete your profile thoroughly and accurately.</p>
+                                <p class="card-text">2. Your profile is reviewed and approved by administrative team.</p>
+                                <p class="card-text">3. Search and invite Visa Counsellor.</p>
+                                <p class="card-text">4. Hire a visa counsellor and make payment in escow account.</p>
+                                <p class="card-text">5. Approve payment to Visa counsellor upon completion of work.</p>
+                                <br>
+                            </div>
+                            <br>
+                            <div class="text-center">
+                                <a class="btn btn-success" href="#!admin/setupProfile" style="padding-left: 50px!important;padding-right: 50px!important;font-size: 17px;color:white">Start My Profile</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="dashboard-item-grid"></div>
+    </div>
+</div>
+<div class="modal-backdrop fade show" ng-show="introduction" ng-click="open_introduction();"></div>
